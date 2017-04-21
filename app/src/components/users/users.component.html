@@ -1,0 +1,9 @@
+<div class="container users">
+    <div class="users-details box">
+        <users-details data="$ctrl.users" on-delete="$ctrl.deleteUser($event)" on-update="$ctrl.showUpdateForm($event)"></users-details>
+        <button ng-click="$ctrl.showUserForm=true; $ctrl.button='Create'" class="btn btn-sm btn-primary">add user</button>
+    </div>
+    <div class="users-form box" ng-show="$ctrl.showUserForm">
+        <users-form data="$ctrl.user" button="$ctrl.button" on-submit="$ctrl.submitForm($event)"></users-form>
+    </div>
+</div>
