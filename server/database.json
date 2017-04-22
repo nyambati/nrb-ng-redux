@@ -1,18 +1,18 @@
 {
   "users": [
     {
-      "firstName": "Thomas",
-      "lastName": "Nyambati",
-      "email": "thomasnyambati@gmail.com",
-      "age": 45,
-      "id": 1
+      "firstName": "Joy",
+      "lastName": "Kare",
+      "email": "joy@kare.com",
+      "age": 21,
+      "id": 2
     },
     {
       "firstName": "Thomas",
       "lastName": "Nyambati",
       "email": "thomasnyambati@gmail.com",
-      "age": 4,
-      "id": 2
+      "age": 45,
+      "id": 3
     }
   ],
   "posts": []

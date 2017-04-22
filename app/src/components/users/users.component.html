@@ -1,7 +1,8 @@
 <div class="container users">
+    <h2>Users Directory</h2>
     <div class="users-details box">
-        <users-details data="$ctrl.users" on-delete="$ctrl.deleteUser($event)" on-update="$ctrl.showUpdateForm($event)"></users-details>
-        <button ng-click="$ctrl.showUserForm=true; $ctrl.button='Create'" class="btn btn-sm btn-primary">add user</button>
+        <users-details data="$ctrl.users" on-delete="$ctrl.delete($event)" on-update="$ctrl.showUpdateForm($event)"></users-details>
+        <button ng-click="$ctrl.showUserForm=true; $ctrl.button='Create'" class="btn btn-sm btn-primary">Add User</button>
     </div>
     <div class="users-form box" ng-show="$ctrl.showUserForm">
         <users-form data="$ctrl.user" button="$ctrl.button" on-submit="$ctrl.submitForm($event)"></users-form>

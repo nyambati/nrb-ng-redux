@@ -1,14 +1,18 @@
+import { Component } from '../../angular/core';
 import template from './users.component.html'
 
-class UsersComponentController {
-    constructor(UsersService, $scope) {
+@Component({
+    template
+})
+
+export default class UsersList {
+    constructor(UsersService) {
         this.button = 'Create'
-        this.Users = UsersService;
-        this.scope = $scope;
+        Object.assign(this, UsersService);
     }
 
     fetch() {
-        this.Users.getAllUsers()
+        this.getAllUsers()
             .then(response => this.users = response.data)
             .catch(error => console.log(error.data));
     }
@@ -26,13 +30,16 @@ class UsersComponentController {
         if (type === "create") {
             return this.addUser(user)
         }
-        this.updateUser(user);
+
+        this.updateUser(user)
+            .then(response => console.log(response))
+            .catch(error => console.log(error.data));
         this.reset()
 
     }
 
     addUser(user) {
-        return this.Users.createUser(user)
+        return this.createUser(user)
             .then(response => {
                 console.log(response.data);
                 this.reset()
@@ -46,21 +53,9 @@ class UsersComponentController {
         this.button = "Update";
     }
 
-    updateUser(user) {
-        this.Users.updateUser(user)
-            .then(response => console.log(response))
-            .catch(error => console.log(error.data));
-
-    }
-
-    deleteUser({ id }) {
-        this.Users.deleteUser(id)
+    delete({ id }) {
+        this.deleteUser(id)
             .then(response => console.log(response))
             .catch(error => console.log(error.data));
     }
-}
-
-export default {
-    controller: UsersComponentController,
-    template
 }

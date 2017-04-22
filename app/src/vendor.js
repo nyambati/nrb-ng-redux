@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import 'angular';
-
-angular.element(document).ready(() => angular.bootstrap(document, ['nrb-redux']))
+// import 'ng-redux';
+// import 'redux';
